@@ -1,0 +1,24 @@
+This is a personal project created for the purpose of monitoring
+temperature and humidity in an enclosed space (i.e. a safe), and logging data to a channel on thingspeak.com.
+
+It is built upon the Raspberry Pi and includes the following components:
+
+	- Raspberry Pi Model B, rev 2 (512MB)
+	- AM2302 (wired DHT22) temperature-humidity sensor 
+		(http://www.adafruit.com/product/393)
+	- USB WiFi (802.11b/g/n) Module with Antenna for Raspberry Pi
+		(http://www.adafruit.com/product/1030)
+	- Adafruit Blue&White 16x2 LCD+Keypad Kit for Raspberry Pi
+		(http://www.adafruit.com/product/1115)
+
+The AM2302 requires drivers written by Adafruit, which can be obtained from the following github repository: git://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code.git
+
+The initial version of this program will utilize the pre-compiled Adafruit_DHT program found under  ~/Adafruit-Raspberry-Pi-Python-Code/Adafruit_DHT_Driver/
+
+A future revision may feature direct communication with the AM2302 instead of utilizing OS calls to the Adafruit_DHT program via subprocess.check_output().
+
+The program may be started by issuing the following command:
+
+sudo python humidity.py <api_key>
+
+where <api_key> is the channel API key issued by thingspeak.com
